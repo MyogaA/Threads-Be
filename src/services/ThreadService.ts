@@ -6,6 +6,9 @@ import {
   updateThreadSchema,
 } from "../utils/Thread";
 import { v2 as cloudinary } from 'cloudinary';
+import { Like } from "../entities/Like";
+import { Reply } from "../entities/Reply";
+import { User } from "../entities/User";
 
 export default new class ThreadServices {
   private readonly threadRepository: Repository<Thread> = AppDataSource.getRepository(Thread)
@@ -19,7 +22,7 @@ export default new class ThreadServices {
         }
       })
 
-      let newResponse = [];
+      let newResponse: { likeslength: number; id: number; content: string; image: string; users: User; likes: Like[]; replies: Reply[]; }[] = [];
 
       threads.forEach((data) => {
         newResponse.push({
