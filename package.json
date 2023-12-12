@@ -34,7 +34,7 @@
    },
    "scripts": {
       "worker": "nodemon src/Worker/index.ts",
-      "start": "node src/index.ts",
+      "start": "nodemon src/index.ts",
       "build": "tsc --build",
       "typeorm": "typeorm-ts-node-commonjs",
       "migration:generate": "npx typeorm-ts-node-commonjs migration:generate src/migration/threads-migration -d src/data-source.ts",
