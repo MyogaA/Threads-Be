@@ -2,7 +2,7 @@ import * as jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 
 export default new class AuthenticationMiddlewares {
-  Authentication(req, res, next) {
+  Authentication(req : any, res: any, next: any) {
     try {
       const { authorization } = req.headers;
       let token;
